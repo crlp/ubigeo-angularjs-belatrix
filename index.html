@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Meta-Information -->
+  <title>Angular JS</title>
+  
+  <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+  
+
+  <!-- Our Website CSS Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div ng-app="app" ng-controller="MainCtrl" class="container">
+    <h3>Seleccione un archivo</h3>
+    <input type="file" on-read-file="showContent($fileContent)" />
+    <div ng-if="content">
+      <div>
+        <h2>------------------------</h2>
+        <h2>Resultado</h2>
+        <h2>------------------------</h2>
+        <h3>Departamentos</h3>
+        <h3> {{depaContent}}</h3>
+        <table>
+          <thead>
+            <tr >
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Codigo padre</th>
+              <th>Descripcion padre</th>
+            </tr>
+          </thead>
+          <tbody>
+             <!--<tr ng-repeat="item in departamentos" >
+                <td>{{item.codigo}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>--</td>
+                <td>--</td>
+             </tr>-->
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Provincias</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Codigo padre</th>
+              <th>Descripcion padre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in provincias">
+                <td>{{item.codigo}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.codigoDepartamento}}</td>
+                <td>{{item.descripcionDepartamento}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Distritos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Codigo padre</th>
+              <th>Descripcion padre</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="item in distritos">
+              <td>{{item.codigo}}</td>
+              <td>{{item.descripcion}}</td>
+              <td>{{item.codigoProvincia}}</td>
+              <td>{{item.descripcionProvincia}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"> </script>
+  
+</body>
+</html>
