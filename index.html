@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <div ng-app="app" ng-controller="MainCtrl" class="container">
+  <div ng-app="app" ng-controller="mainCtrl">
     <h3>Seleccione un archivo</h3>
     <input type="file" on-read-file="showContent($fileContent)" />
     <div ng-if="content">
@@ -41,12 +41,12 @@
             </tr>
           </thead>
           <tbody>
-             <!--<tr ng-repeat="item in departamentos" >
+             <tr ng-repeat="item in departamentosI" >
                 <td>{{item.codigo}}</td>
                 <td>{{item.descripcion}}</td>
                 <td>--</td>
                 <td>--</td>
-             </tr>-->
+             </tr>
           </tbody>
         </table>
       </div>
@@ -62,7 +62,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="item in provincias">
+            <tr ng-repeat="item in provinciasI">
                 <td>{{item.codigo}}</td>
                 <td>{{item.descripcion}}</td>
                 <td>{{item.codigoDepartamento}}</td>
@@ -83,7 +83,7 @@
             </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="item in distritos">
+              <tr ng-repeat="item in distritosI">
               <td>{{item.codigo}}</td>
               <td>{{item.descripcion}}</td>
               <td>{{item.codigoProvincia}}</td>
